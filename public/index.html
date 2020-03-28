@@ -12,6 +12,18 @@
       <strong>We're sorry but <%= webpackConfig.name %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
     <div id="app"></div>
+    <script>
+      (function(){
+        change();
+        
+        function change(){
+          document.documentElement.style.fontSize = document.documentElement.clientWidth*100/1920 + 'px';  
+        }
+        /* 监听窗口大小发生改变时 */
+        window.addEventListener('DOMContentLoaded', change, false);
+        window.addEventListener('orientationchange', change, false);
+        window.addEventListener('resize',change,false);})()
+    </script>
     <!-- built files will be auto injected -->
   </body>
 </html>
